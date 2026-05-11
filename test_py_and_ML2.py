@@ -29,7 +29,7 @@ y_pred_test = monkey.predict(x_test)
 accuracy = monkey.score(x_test,y_test) * 100
 print(f"دقة النموذج الحاليا {accuracy}")
 user_saat = st.number_input(" :كم ساعة ذاكرت ")
-user_drink = st.selectbox("وش شربت ؟0 "قهوه"  1"عصير" 2"شاي )
+user_drink = st.selectbox("اختار مشروبك:", options=[0, 1, 2], format_func=lambda x: ["قهوة", "عصير", "شاهي"][x])
 user_input = [[user_saat,user_drink]]
 input_pca = pca.transform(user_input)
 opo = monkey.predict(input_pca)
